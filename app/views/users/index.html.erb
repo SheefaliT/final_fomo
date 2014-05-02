@@ -1,0 +1,13 @@
+<h1>List Of Users</h1>
+<br>
+
+<%= form_tag users_path, :method=> 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:params] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+
+
+<%= render @users %>

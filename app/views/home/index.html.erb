@@ -1,0 +1,9 @@
+<h1>Newsfeed</h1>
+<br>
+
+<%-# Render each post -%>
+<%= render 'posts/form' %>
+<%-# Render all of the activities -%>
+<% @activities.each do |activity| %>
+    <%= render_activity(activity) %>
+<% end %>

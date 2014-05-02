@@ -1,0 +1,52 @@
+<hdr>FOMO: <b>User Profile</b></hdr>
+<br>
+<br>
+<br>
+
+
+
+<div class="right">
+<% if user_signed_in? %>
+<%= render 'shared/follow_form', user: @user %>
+<% end %>
+</div>
+<%= image_tag @user.avatar.url(:thumb), class: 'profile' %>
+
+<span class="left">
+<h4><%= @user.name %></h4>
+</span>
+<br>
+<br>
+<br>
+<br>
+<b>Hobbies:</b> <%= @user.name %>
+<br>
+
+<%-# Is this a friend of the user? -%>
+<% if @user.followed_by?(current_user) %>
+  <div class="row feed ">
+  <b>Activities:</b>
+  <% @activities.each do |activity| %>
+      <%= render_activity(activity) %>
+  <% end %>
+  </div>
+<% end %>
+
+<%-# Is this the user himself? -%>
+<% if @user == current_user %>
+  <div class="row feed ">
+  <b>Your Activities:</b>
+  <% @activities.each do |activity| %>
+      <%= render_activity(activity) %>
+  <% end %>
+  </div>
+<% end %>
+
+<%-# Otherwise display a message to let them know they can't see this user's activity -%>
+<% if @user != current_user %>
+  <% if !@user.followed_by?(current_user) %>
+    <div class="row feed ">
+    <b>You cannot view <%= @user.name %>'s activities since you aren't their friend.</b>
+    </div>
+  <% end %>
+<% end %>

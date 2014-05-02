@@ -1,0 +1,14 @@
+Facebook::Application.routes.draw do
+
+    devise_for :users
+
+    resources :users
+    resources :posts
+    resources :comments
+
+    root to: 'home#index'
+    match 'follow' => 'users#follow'
+    match 'unfollow' => 'users#unfollow'
+    match 'like' => 'users#like'
+    match 'unlike' => 'users#unlike'
+end
