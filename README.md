@@ -19,4 +19,8 @@ Views:
  - Profile Preferences: This page will let users add and change information that is listed on their profile page. It will also show a list of friends and the option to defriend them. This is only available to the user.
 
 Controllers:
-*Profile Preferences: This page will let users add and change information that is listed on their profile page. It will also show a list of friends and the option to defriend them. This is only available to the user.
+ - Users: User posts, activities
+ - Home: Homepage controller which allows user to sign in. Once signed in, home controller controls newsfeed
+ - Posts: Allows user to create post, add pictures, etc. to their profile
+ - Comments: Allows user to comment on posts by other users
+ - Application: Current user session
