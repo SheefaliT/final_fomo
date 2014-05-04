@@ -5,12 +5,16 @@ Team members: Chris Gray, Priya Sudendra, Sheefali Tewari
 
 Description: Our project is a basic web application similar to Facebook. A user will be able to create an account, and login after their account is created. There will be multiple pages that the user can click on, including their profile page, news feed, interests, preferences, etc.
 
+
 Models:
+
 *Users: We will have a model of all users and their accounts.
 
 *Interests: Interests that a user can add to their profiles will be another model.
 
+
 Views:
+
 *Main Page: The main page will have the title of the website as well as the option to log in or create an account.
 
 *Logging in: This page will have a log in form. After signing in, the user will be taken to the newsfeed.
